@@ -1,0 +1,237 @@
+<div id="ball1" style="
+  z-index:1;
+  position:absolute;
+  left:0px;
+  top:0px;
+  width:50px;
+  height:50px;
+  border-radius:50%;
+  background:green"></div>
+
+<div id="ball2" style="
+  z-index:2;
+  position:absolute;
+  left:0px;
+  top:50px;
+  width:50px;
+  height:50px;
+  border-radius:50%;
+  background:purple"></div>
+
+<div id="ball3" style="
+  z-index:5;
+  position:absolute;
+  left:0px;
+  top:100px;
+  width:50px;
+  height:50px;
+  border-radius:50%;
+  background:black"></div>
+
+<div id="ball4" style="
+z-index:5;
+position:absolute;
+left:0px;
+top:150px;
+width:50px;
+height:50px;
+border-radius:50%;
+background:blue"></div>
+
+<div id="ball5" style="
+  z-index:5;
+  position:absolute;
+  left:0px;
+  top:200px;
+  width:50px;
+  height:50px;
+  border-radius:50%;
+  background:red"></div>
+<script>
+
+let ball1 = document.getElementById('ball1');
+let ball2 = document.getElementById('ball2');
+let ball3 = document.getElementById('ball3');
+let ball4 = document.getElementById('ball4');
+let ball5 = document.getElementById('ball5');
+
+const leftLimit = 0
+const rightLimit = 250
+const topLimit = 0
+const bottomLimit = 500
+
+let positionX1 = 0;
+let positionY1 = 0;
+let velocityX1 = 5;
+let velocityY1 = 3;
+
+let positionX2 = 0;
+let positionY2 = 50;
+let velocityX2 = 6;
+let velocityY2 = 2;
+
+let positionX3 = 0;
+let positionY3 = 100;
+let velocityX3 = 2;
+let velocityY3 = 1;
+
+let positionX4 = 0;
+let positionY4 = 150;
+let velocityX4 = 7;
+let velocityY4 = 4;
+
+let positionX5 = 0;
+let positionY5 = 200;
+let velocityX5 = 9;
+let velocityY5 = 10;
+
+function getRandomInt (){
+  return Math.floor(Math.random() * (10-1) + 1);
+}
+// This function would not work for moving multiple balls;
+// After several iterations the only way to get the balls
+// to move independtly was to create seperate variables
+// and functions for the movement of each <div>;
+// Will attempt to refactor code for one function after vacation;
+
+/*function moveBall (ball, positionX, positionY, 
+velocityX, velocityY){
+      //Adjust the X position of the ball
+      positionX += velocityX;
+       ball.style.left = positionX + 'px';
+       console.log(positionX);
+       if (positionX >= rightLimit){
+          velocityX = getRandomInt();
+          velocityX *= -1;
+        } if (positionX <= leftLimit){
+         velocityX = getRandomInt();
+        }
+
+      //Adjust Y position of the ball
+       if (positionY >= bottomLimit){
+         velocityY = getRandomInt();
+         velocityY *= -1;
+      }if (positionY <= topLimit){
+         velocityY = getRandomInt();
+      }   
+      positionY += velocityY;
+      ball.style.top = positionY + 'px';
+     }
+
+setInterval(moveBall, 10, ball1, positionX1, positionY1, velocityX1, velocityX2);*/
+
+function moveBall1 (){
+       
+    positionX1 += velocityX1;
+    ball1.style.left = positionX1 + 'px';
+    if (positionX1 >= rightLimit){
+    velocityX1 =getRandomInt()
+    velocityX1 *= -1;
+   }if (positionX1 <= leftLimit){
+      velocityX1 = getRandomInt();
+   }  
+ 
+    positionY1 += velocityY1;
+    ball1.style.top = positionY1 + 'px';
+    if (positionY1 >= bottomLimit){
+      velocityY1 = getRandomInt();
+      velocityY1 *= -1;
+   }if (positionY1 <= topLimit){
+      velocityY1 = getRandomInt();
+   }   
+  }
+
+setInterval(moveBall1, 10);
+
+function moveBall2 (){
+        
+    positionX2 += velocityX2;
+    ball2.style.left = positionX2 + 'px';
+    if (positionX2 >= rightLimit){
+    velocityX2 = getRandomInt()
+    velocityX2 *= -1;
+   }if (positionX2 <= leftLimit){
+     velocityX2 = getRandomInt();
+   }  
+ 
+    positionY2 += velocityY2;
+    ball2.style.top = positionY2 + 'px';
+    if (positionY2 >= bottomLimit){
+    velocityY2 = getRandomInt()
+    velocityY2 *= -1;
+   }if (positionY2 <= topLimit){
+     velocityY2 = getRandomInt();
+   }
+} 
+
+setInterval(moveBall2, 10)
+
+function moveBall3 (){
+        
+        positionX3 += velocityX3;
+        ball3.style.left = positionX3 + 'px';
+        if (positionX3 >= rightLimit){
+        velocityX3 = getRandomInt()
+        velocityX3 *= -1;
+       }if (positionX3 <= leftLimit){
+         velocityX3 = getRandomInt();
+       }  
+     
+        positionY3 += velocityY3;
+        ball3.style.top = positionY3 + 'px';
+        if (positionY3 >= bottomLimit){
+        velocityY3 = getRandomInt()
+        velocityY3 *= -1;
+       }if (positionY3 <= topLimit){
+         velocityY3 = getRandomInt();
+       }
+    } 
+    
+    setInterval(moveBall3, 10)
+
+    function moveBall4 (){
+        
+        positionX4 += velocityX4;
+        ball4.style.left = positionX4 + 'px';
+        if (positionX4 >= rightLimit){
+        velocityX4 = getRandomInt()
+        velocityX4 *= -1;
+       }if (positionX4 <= leftLimit){
+         velocityX4 = getRandomInt();
+       }  
+     
+        positionY4 += velocityY4;
+        ball4.style.top = positionY4 + 'px';
+        if (positionY4 >= bottomLimit){
+        velocityY4 = getRandomInt()
+        velocityY4 *= -1;
+       }if (positionY4 <= topLimit){
+         velocityY4 = getRandomInt();
+       }
+    } 
+    
+    setInterval(moveBall4, 10) 
+
+    function moveBall5 (){
+        
+        positionX5 += velocityX5;
+        ball5.style.left = positionX5 + 'px';
+        if (positionX5 >= rightLimit){
+        velocityX5 = getRandomInt()
+        velocityX5 *= -1;
+       }if (positionX5 <= leftLimit){
+         velocityX5 = getRandomInt();
+       }  
+     
+        positionY5 += velocityY5;
+        ball5.style.top = positionY5 + 'px';
+        if (positionY5 >= bottomLimit){
+        velocityY5 = getRandomInt()
+        velocityY5 *= -1;
+       }if (positionY5 <= topLimit){
+         velocityY5 = getRandomInt();
+       }
+    } 
+    
+    setInterval(moveBall5, 10)   
+</script>
