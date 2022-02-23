@@ -1,3 +1,10 @@
+<div style="
+z-index: 1;
+position: absolute;
+width: 300;
+height: 400;
+border: 1px solid black;">
+
 <div id="ball1" style="
   z-index:1;
   position:absolute;
@@ -47,6 +54,23 @@ background:blue"></div>
   height:50px;
   border-radius:50%;
   background:red"></div>
+</div>
+<button onclick="start()" style="
+  z-index: 1;
+  position: absolute;
+  left: 350px;
+  top: 0px;">
+Click me to start
+</button>
+
+<!--<button onclick="stop()" style="
+z-index: 1;
+position: absolute;
+left: 350px;
+top: 50px;">
+Click me to stop
+</button>-->
+
 <script>
 
 let ball1 = document.getElementById('ball1');
@@ -58,7 +82,7 @@ let ball5 = document.getElementById('ball5');
 const leftLimit = 0
 const rightLimit = 250
 const topLimit = 0
-const bottomLimit = 500
+const bottomLimit = 350
 
 let positionX1 = 0;
 let positionY1 = 0;
@@ -120,6 +144,8 @@ velocityX, velocityY){
 
 setInterval(moveBall, 10, ball1, positionX1, positionY1, velocityX1, velocityX2);*/
 
+
+function start(){
 function moveBall1 (){
        
     positionX1 += velocityX1;
@@ -141,7 +167,7 @@ function moveBall1 (){
    }   
   }
 
-setInterval(moveBall1, 10);
+let one = setInterval(moveBall1, 10);
 
 function moveBall2 (){
         
@@ -164,7 +190,7 @@ function moveBall2 (){
    }
 } 
 
-setInterval(moveBall2, 10)
+let two = setInterval(moveBall2, 10)
 
 function moveBall3 (){
         
@@ -187,7 +213,7 @@ function moveBall3 (){
        }
     } 
     
-    setInterval(moveBall3, 10)
+   let three = setInterval(moveBall3, 10)
 
     function moveBall4 (){
         
@@ -210,7 +236,7 @@ function moveBall3 (){
        }
     } 
     
-    setInterval(moveBall4, 10) 
+   let four = setInterval(moveBall4, 10) 
 
     function moveBall5 (){
         
@@ -233,5 +259,9 @@ function moveBall3 (){
        }
     } 
     
-    setInterval(moveBall5, 10)   
+    let five = setInterval(moveBall5, 10)   
+}
+
+//function stop(){
+  //clearInterval(one)}
 </script>
